@@ -1,8 +1,7 @@
 using SFML.Graphics;
 using SFML.System;
-using test3.draw;
 
-namespace test3;
+namespace test3.draw;
 
 public abstract class AbstractZombie: AbstractDrawable
 {

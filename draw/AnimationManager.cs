@@ -1,6 +1,6 @@
 using SFML.Graphics;
 
-namespace test3;
+namespace test3.draw;
 
 public class AnimationManager
 {

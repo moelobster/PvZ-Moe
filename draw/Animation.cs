@@ -1,7 +1,7 @@
 using SFML.Graphics;
 using SFML.System;
 
-namespace test3;
+namespace test3.draw;
 
 
 public class AnimationFrame
