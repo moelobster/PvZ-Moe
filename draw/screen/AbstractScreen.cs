@@ -6,17 +6,17 @@ public abstract class AbstractScreen(string name, string backTexturePath)
     : AbstractDrawable(backTexturePath)
 {
     public string Name = name;
-    protected Dictionary<string, Sprite>? Sprites;
+    protected Dictionary<string, Sprite>? Drawables;
 
-    public virtual void AddSprite(string name, Sprite sprite)
+    public virtual void AddSprite(string name, Sprite drawable)
     {
-        Sprites ??= new Dictionary<string, Sprite>();
-        Sprites[name] = sprite;
+        Drawables ??= new Dictionary<string, Sprite>();
+        Drawables[name] = drawable;
     }
     
-    public virtual Sprite? GetSprite(string key)
+    public virtual Sprite? GetDrawable(string key)
     {
-        return Sprites?.GetValueOrDefault(key);
+        return Drawables?.GetValueOrDefault(key);
     }
     
     public override void Update(float deltaTime)
@@ -28,11 +28,11 @@ public abstract class AbstractScreen(string name, string backTexturePath)
     {
         // 先绘制背景
         target.Draw(BackSprite);
-        // 再绘制子 Sprites
-        if (Sprites == null) return;
-        foreach (var sprite in Sprites.Values)
+        // 再绘制子 Drawables
+        if (Drawables == null) return;
+        foreach (var drawable in Drawables.Values)
         {
-            target.Draw(sprite);
+            target.Draw(drawable);
         }
     }
 }
